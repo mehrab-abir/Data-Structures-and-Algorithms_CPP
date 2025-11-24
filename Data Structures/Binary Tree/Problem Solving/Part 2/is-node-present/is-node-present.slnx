@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="is-node-present/is-node-present.vcxproj" Id="b3c0764f-f256-4214-b975-1155cf093410" />
+</Solution>

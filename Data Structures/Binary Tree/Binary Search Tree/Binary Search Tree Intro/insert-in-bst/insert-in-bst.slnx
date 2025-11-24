@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="insert-in-bst/insert-in-bst.vcxproj" Id="9d5d651b-573a-4780-8221-99dd27c9e65d" />
+</Solution>

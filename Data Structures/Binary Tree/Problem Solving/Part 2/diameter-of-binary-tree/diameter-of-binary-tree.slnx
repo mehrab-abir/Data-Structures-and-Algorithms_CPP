@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="diameter-of-binary-tree/diameter-of-binary-tree.vcxproj" />
+</Solution>

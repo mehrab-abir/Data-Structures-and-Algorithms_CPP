@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="special-binary-tree/special-binary-tree.vcxproj" Id="4b4bd90f-a774-4f60-86a4-3ef53d3416cf" />
+</Solution>

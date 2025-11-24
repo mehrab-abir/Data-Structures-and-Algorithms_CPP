@@ -3,7 +3,7 @@
 #include<queue>
 #include<vector>
 
-//https://www.naukri.com/code360/problems/node-level_920383
+//https://leetcode.com/problems/binary-tree-right-side-view/description/
 
 using namespace std;
 
@@ -17,31 +17,27 @@ public:
 		this->value = value;
 		this->left = NULL;
 		this->right = NULL;
-
 	}
 };
 
-//input
 Node* input_binary_tree() {
 	int rootValue;
-	cout << "Enter a value for root: ";
+	cout << "Enter a value for root (-1 for NULL): ";
 	cin >> rootValue;
 
 	Node* root;
 
 	if (rootValue == -1) {
 		root = NULL;
-		cout << "Root is NULL. Tree is empty." << endl;
+		cout << "Root is NULL. So tree is empty." << endl;
 		return root;
 	}
 	else {
 		root = new Node(rootValue);
 	}
-
 	cout << endl;
 
 	queue<Node*>q;
-
 	q.push(root);
 
 	while (!q.empty()) {
@@ -49,10 +45,10 @@ Node* input_binary_tree() {
 		q.pop();
 
 		int leftValue, rightValue;
-		cout << "Enter a value for the left child of " << parentNode->value << ": ";
-		cin >> leftValue;
 
-		cout << "Enter a value for the right child of " << parentNode->value << ": ";
+		cout << "Enter a value for the left child of " << parentNode->value << " (-1 for NULL): ";
+		cin >> leftValue;
+		cout << "Enter a value for the right child of " << parentNode->value << " (-1 for NULL): ";
 		cin >> rightValue;
 
 		Node* leftNode, * rightNode;
@@ -74,6 +70,7 @@ Node* input_binary_tree() {
 		parentNode->left = leftNode;
 		parentNode->right = rightNode;
 
+
 		if (parentNode->left) {
 			q.push(parentNode->left);
 		}
@@ -86,18 +83,18 @@ Node* input_binary_tree() {
 	return root;
 }
 
-//node level
-void nodeLevel(Node* root, int x) {
-	
-	queue<pair<Node*, int>>q;
 
-	if (root) {
-		q.push({ root,1 }); //root er level 1 dhora hoise
-	}
-	else {
-		cout << "Tree is empty" << endl;
+void rightView(Node* root, vector<int>& v) {
+	
+	if (root == NULL) {
 		return;
 	}
+
+	queue<pair<Node*, int>>q;
+	q.push({ root, 1 }); //level starts from 1- root at level 1
+
+	int freqArr[100] = { 0 }; //assuming max height of tree is less than 100
+	
 
 	while (!q.empty()) {
 		pair<Node*, int> parent = q.front();
@@ -106,38 +103,35 @@ void nodeLevel(Node* root, int x) {
 		Node* node = parent.first;
 		int level = parent.second;
 
-		if (node->value == x) {
-			cout << "Level of this value: " << level << endl;
-			break;
+		if (freqArr[level] == 0) {
+			v.push_back(node->value);
+			freqArr[level] = 1;
 		}
 
-		if (node->left) {
-			q.push({ node->left, level + 1 }); //jehetu child node ase, tai child node er level 1 beshi
-		}
+		//this part is the key - push right child first in order to get right view
+		//and for left view, push left child first,, that's it.
 		if (node->right) {
-			q.push({ node->right , level + 1 }); //jehetu child node ase, tai child node er level 1 beshi
+			q.push({ node->right, level + 1 });
+		}
+		if (node->left) {
+			q.push({ node->left , level + 1 });
 		}
 	}
 }
 
 int main() {
+
 	Node* root = input_binary_tree();
 
-	int number;
-	cout << "Enter the value to find its level: ";
-	cin >> number;
+	vector<int>v;
 
-	nodeLevel(root, number);
+	rightView(root, v);
+
+	cout << "Right view of this binary tree: ";
+	for (int val : v) {
+		cout << val << " ";
+	}
+	cout << endl;
 
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-

@@ -126,9 +126,9 @@ int main() {
 	int numOfNodes = countNodes(root);
 	cout << "Number of nodes: " << numOfNodes << endl;
 
-	int nodes = pow(2, maxDepth) - 1;
+	int nodesInMaxDepth = pow(2, maxDepth) - 1;
 
-	if (nodes == numOfNodes) {
+	if (nodesInMaxDepth == numOfNodes) {
 		cout << "It's a perfect binary tree" << endl; 
 	}
 	else {
