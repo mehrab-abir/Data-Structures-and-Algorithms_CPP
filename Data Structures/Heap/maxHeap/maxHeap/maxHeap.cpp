@@ -7,7 +7,7 @@ using namespace std;
 /*
 Complete binary tree - All levels starting from L1 to the 2nd last level must be fulfil with nodes
 and for the last level, all nodes must be filled up from the left side.
-It is not mandatory that the last leaf node must have the right sibling.
+It is not mandatory for the last leaf node to have the right sibling.
 
 Max heap is just a complete binary tree where root is the highest value, the values of children of each
 node are smaller or equal.
@@ -24,20 +24,20 @@ public:
 
 	Node(int value) {
 		this->value = value;
-		this->left = NULL;
-		this->right = NULL;
+		this->left = nullptr;
+		this->right = nullptr;
 	}
 };
 
 Node* input_maxHeap() {
 	int rootValue;
-	cout << "Enter a value for the root (-1 for NULL): ";
+	cout << "Enter a value for the root (-1 for nullptr): ";
 	cin >> rootValue;
 
 	Node* root;
 	if (rootValue == -1) {
-		root = NULL;
-		cout << "Root is NULL. So tree is empty" << endl;
+		root = nullptr;
+		cout << "Root is nullptr. So tree is empty" << endl;
 		return root;
 	}
 	else {
@@ -53,22 +53,22 @@ Node* input_maxHeap() {
 		q.pop();
 
 		int leftValue, rightValue;
-		cout << "Enter a value for the left child of " << parent->value << "(-1 for NULL): ";
+		cout << "Enter a value for the left child of " << parent->value << "(-1 for nullptr): ";
 		cin >> leftValue;
-		cout << "Enter a value for the right child of " << parent->value << "(-1 for NULL): ";
+		cout << "Enter a value for the right child of " << parent->value << "(-1 for nullptr): ";
 		cin >> rightValue;
 
 		Node* leftNode, * rightNode;
 
 		if (leftValue == -1) {
-			leftNode = NULL;
+			leftNode = nullptr;
 		}
 		else {
 			leftNode = new Node(leftValue);
 		}
 
 		if (rightValue == -1) {
-			rightNode = NULL;
+			rightNode = nullptr;
 		}
 		else {
 			rightNode = new Node(rightValue);
@@ -90,7 +90,7 @@ Node* input_maxHeap() {
 }
 
 void convertToArray(Node* root, vector<int>& v) {
-	if (root == NULL) {
+	if (root == nullptr) {
 		cout << "Tree is empty. Converting not possible." << endl;
 		return;
 	}

@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="delete-from-max-heap/delete-from-max-heap.vcxproj" Id="9539c8fb-4ed6-49d6-a4e3-7ce17e2036bf" />
+</Solution>

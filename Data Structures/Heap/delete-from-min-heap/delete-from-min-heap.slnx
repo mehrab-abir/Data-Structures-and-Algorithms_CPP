@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="delete-from-min-heap/delete-from-min-heap.vcxproj" Id="6e50fa09-d579-4a7a-9051-d8dc886df38c" />
+</Solution>

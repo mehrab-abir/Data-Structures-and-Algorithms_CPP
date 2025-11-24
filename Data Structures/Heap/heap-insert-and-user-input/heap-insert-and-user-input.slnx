@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="heap-insert-and-user-input/heap-insert-and-user-input.vcxproj" Id="640d61a0-3179-4e8a-9ba0-bfda3339d2d6" />
+</Solution>

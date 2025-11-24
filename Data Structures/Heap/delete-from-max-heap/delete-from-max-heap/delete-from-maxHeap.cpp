@@ -4,17 +4,17 @@
 
 using namespace std;
 
-//Complexity of deleting one element from min heap -- O(logN)
+//Complexity of deleting one element from max heap -- O(logN)
 
-//input for min heap
-void insert_at_minHeap(int value, vector<int>& v) {
+//input for max heap
+void insert_at_maxHeap(int value, vector<int>& v) {
 	v.push_back(value);
 
 	int childIdx = v.size() - 1;
 
 	while (childIdx != 0) {
 		int parentIdx = (childIdx - 1) / 2;
-		if (v[parentIdx] > v[childIdx]) {
+		if (v[parentIdx] < v[childIdx]) {
 			swap(v[parentIdx], v[childIdx]);
 		}
 		else {
@@ -24,18 +24,18 @@ void insert_at_minHeap(int value, vector<int>& v) {
 	}
 }
 
-void print_minHeap(vector<int>v) {
-	cout << "The min heap array: ";
+void print_maxHeap(vector<int>v) {
+	cout << "The max heap array: ";
 	for (int value : v) {
 		cout << value << " ";
 	}
 	cout << endl;
 }
 
-void delete_from_minHeap(vector<int>& v) {
+void delete_from_maxHeap(vector<int>& v) {
 	cout << "\t" << v[0] << " deleted." << endl;
 
-	v[0] = v.back(); //keeping the last value to the first index
+	v[0] = v.back(); //keeping the last value at the first index
 	v.pop_back();
 
 	int parentIdx = 0;
@@ -60,11 +60,11 @@ void delete_from_minHeap(vector<int>& v) {
 			rightValue = INT_MIN; //if right idx does not exist, assign it the smallest number
 		}
 
-		if (leftValue < v[parentIdx] && leftValue < rightValue) {
+		if (leftValue >= rightValue && leftValue > v[parentIdx]) {
 			swap(v[leftIdx], v[parentIdx]);
 			parentIdx = leftIdx; // left index of this iteration becomes parentIndex for the next interation
 		}
-		else if (rightValue < v[parentIdx] && rightValue < leftValue) {
+		else if (rightValue > leftValue && rightValue > v[parentIdx]) {
 			swap(v[rightIdx], v[parentIdx]);
 			parentIdx = rightIdx; // right index of this iteration becomes parentIndex for the next interation
 		}
@@ -75,9 +75,9 @@ void delete_from_minHeap(vector<int>& v) {
 }
 
 int main() {
-	cout << "Create a min heap array >>>> Input...Must be a complete binary tree::" << endl;
+	cout << "Create a max heap array >>>> Input...Must be a complete binary tree:" << endl;
 	int n;
-	cout << "Size of the min heap: ";
+	cout << "Size of the  max heap: ";
 	cin >> n;
 
 	vector<int>v;
@@ -87,17 +87,17 @@ int main() {
 		cout << "Value " << i + 1 << ": ";
 		cin >> value;
 
-		insert_at_minHeap(value, v);
+		insert_at_maxHeap(value, v);
 	}
 	cout << endl;
 
-	print_minHeap(v);
+	print_maxHeap(v);
 
-	delete_from_minHeap(v);
-	print_minHeap(v);
+	delete_from_maxHeap(v);
+	print_maxHeap(v);
 
-	delete_from_minHeap(v);
-	print_minHeap(v);
+	delete_from_maxHeap(v);
+	print_maxHeap(v);
 
 	return 0;
 }

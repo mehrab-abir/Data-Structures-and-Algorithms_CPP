@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="maxHeap/maxHeap.vcxproj" Id="1fa2106f-2dc5-4c29-898a-eb4d59c315d7" />
+</Solution>

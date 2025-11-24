@@ -31,7 +31,7 @@ void print_maxHeap(vector<int>v) {
 }
 
 int main() {
-	cout << "Create a max heap array >>>> Input...Must be a complete binary tree:" << endl;
+	cout << "Create a max heap array >>>>" << endl;
 	int n;
 	cout << "Size of the  max heap: ";
 	cin >> n;
