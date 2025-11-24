@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="count-leaf-nodes/count-leaf-nodes.vcxproj" Id="3acfa6d6-866a-4448-8328-71558a9027a9" />
+</Solution>

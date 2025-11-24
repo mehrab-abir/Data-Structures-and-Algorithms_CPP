@@ -1,0 +1,14 @@
+﻿# Visual Studio cache / build files
+.vs/
+*.ipch
+*.obj
+*.pdb
+*.exe
+*.ilk
+*.log
+
+# Build folders
+Debug/
+Release/
+x64/
+x86/

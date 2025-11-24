@@ -1,0 +1,83 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<iostream>
+
+using namespace std;
+
+class Node {
+public:
+	int value;
+	Node* next;
+	Node* prev;
+
+	Node(int value) {
+		this->value = value;
+		this->next = NULL;
+		this->prev = NULL;
+	}
+};
+
+void insert_at_tail(Node*& head, Node*& tail, int value) {
+	Node* newnode = new Node(value);
+
+	if (head == NULL) {
+		head = newnode;
+		tail = newnode;
+	}
+
+	tail->next = newnode;
+	newnode->prev = tail;
+	tail = newnode;
+}
+
+void print_forward(Node* head) {
+
+	Node* temp = head;
+
+	//if list is empty
+	if (head == NULL) {
+		cout << "Linked list is empty" << endl;
+		return;
+	}
+
+	while (temp != NULL) {
+		cout << temp->value << " ";
+		temp = temp->next;
+	}
+	cout << endl;
+}
+
+//reverse doubly linked list --- two pointers technique
+void reverse_doubly_linked_list(Node* head, Node*& tail) {
+	for (Node* i = head, *j = tail; i != j && j->prev != i; i = i->next, j = j->prev) {
+		swap(i->value, j->value);
+	}
+}
+
+int main() {
+	
+	Node* head = NULL;
+	Node* tail = NULL;
+	
+	cout << "Create a doubly linked list: >>>>>>>>>" << endl;
+
+	while (true) {
+		int value;
+		cout << "Enter an integer number (-1 to end the list): ";
+		cin >> value;
+
+		if (value == -1) {
+			break;
+		}
+		insert_at_tail(head, tail, value);
+	}
+
+	cout << "The linked list: ";
+	print_forward(head);
+
+	reverse_doubly_linked_list(head, tail);
+
+	cout << "The linked list after reversing: ";
+	print_forward(head);
+
+	return 0;
+}

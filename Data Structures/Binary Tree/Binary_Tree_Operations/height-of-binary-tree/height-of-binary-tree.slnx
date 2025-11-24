@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="height-of-binary-tree/height-of-binary-tree.vcxproj" Id="c0069a90-3a13-43ed-946e-44e534288233" />
+</Solution>
