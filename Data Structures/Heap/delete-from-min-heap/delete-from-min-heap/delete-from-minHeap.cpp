@@ -29,7 +29,7 @@ void print_minHeap(vector<int>v) {
 	for (int value : v) {
 		cout << value << " ";
 	}
-	cout << endl << endl;
+	cout << endl;
 }
 
 void delete_from_minHeap(vector<int>& v) {
@@ -50,21 +50,21 @@ void delete_from_minHeap(vector<int>& v) {
 			leftValue = v[leftIdx];
 		}
 		else {
-			leftValue = INT_MAX; //if left idx does not exist, assign it the biggest number
+			leftValue = INT_MIN; //if left idx does not exist, assign it the smallest number
 		}
 
 		if (rightIdx < v.size()) {
 			rightValue = v[rightIdx];
 		}
 		else {
-			rightValue = INT_MAX; //if right idx does not exist, assign it the biggest number
+			rightValue = INT_MIN; //if right idx does not exist, assign it the smallest number
 		}
 
-		if (leftValue <= rightValue && leftValue < v[parentIdx]) {
+		if (leftValue < v[parentIdx] && leftValue < rightValue) {
 			swap(v[leftIdx], v[parentIdx]);
 			parentIdx = leftIdx; // left index of this iteration becomes parentIndex for the next interation
 		}
-		else if (rightValue < leftValue && rightValue < v[parentIdx]) {
+		else if (rightValue < v[parentIdx] && rightValue < leftValue) {
 			swap(v[rightIdx], v[parentIdx]);
 			parentIdx = rightIdx; // right index of this iteration becomes parentIndex for the next interation
 		}
@@ -75,7 +75,7 @@ void delete_from_minHeap(vector<int>& v) {
 }
 
 int main() {
-	cout << "Create a min heap array >>>>" << endl;
+	cout << "Create a min heap array >>>> Input...Must be a complete binary tree::" << endl;
 	int n;
 	cout << "Size of the min heap: ";
 	cin >> n;

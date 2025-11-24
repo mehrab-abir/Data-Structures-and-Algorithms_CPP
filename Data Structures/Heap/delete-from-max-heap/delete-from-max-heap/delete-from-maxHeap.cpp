@@ -35,7 +35,7 @@ void print_maxHeap(vector<int>v) {
 void delete_from_maxHeap(vector<int>& v) {
 	cout << "\t" << v[0] << " deleted." << endl;
 
-	v[0] = v.back(); //keeping the last value at the first index
+	v[0] = v.back(); //keeping the last value to the first index
 	v.pop_back();
 
 	int parentIdx = 0;
@@ -60,11 +60,11 @@ void delete_from_maxHeap(vector<int>& v) {
 			rightValue = INT_MIN; //if right idx does not exist, assign it the smallest number
 		}
 
-		if (leftValue >= rightValue && leftValue > v[parentIdx]) {
+		if (leftValue > v[parentIdx] && leftValue > rightValue) {
 			swap(v[leftIdx], v[parentIdx]);
 			parentIdx = leftIdx; // left index of this iteration becomes parentIndex for the next interation
 		}
-		else if (rightValue > leftValue && rightValue > v[parentIdx]) {
+		else if (rightValue > v[parentIdx] && rightValue > leftValue) {
 			swap(v[rightIdx], v[parentIdx]);
 			parentIdx = rightIdx; // right index of this iteration becomes parentIndex for the next interation
 		}
