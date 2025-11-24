@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="search-in-bst-again/search-in-bst-again.vcxproj" Id="790ce9fb-1008-4920-8255-65ddf0d5eeb0" />
+  <Project Path="complete-binary-tree-to-array/complete-binary-tree-to-array.vcxproj" />
 </Solution>

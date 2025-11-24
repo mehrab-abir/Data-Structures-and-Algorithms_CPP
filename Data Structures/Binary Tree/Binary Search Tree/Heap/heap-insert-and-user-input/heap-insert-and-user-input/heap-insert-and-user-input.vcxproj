@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{6bc2897d-71d8-4f97-b71f-b30d60a97410}</ProjectGuid>
-    <RootNamespace>completebinarytreetoarray</RootNamespace>
+    <ProjectGuid>{640d61a0-3179-4e8a-9ba0-bfda3339d2d6}</ProjectGuid>
+    <RootNamespace>heapinsertanduserinput</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="complete-binary-tree-to-array.cpp" />
+    <ClCompile Include="heap-insert-and-user-input.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

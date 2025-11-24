@@ -12,20 +12,20 @@ public:
 
 	Node(int value) {
 		this->value = value;
-		this->left = NULL;
-		this->right = NULL;
+		this->left = nullptr;
+		this->right = nullptr;
 	}
 };
 
 Node* input_binary_tree() {
 	int rootValue;
-	cout << "Enter a value for root (-1 for NULL): ";
+	cout << "Enter a value for root (-1 for nullptr): ";
 	cin >> rootValue;
 
 	Node* root;
 
 	if (rootValue == -1) {
-		root = NULL;
+		root = nullptr;
 	}
 	else {
 		root = new Node(rootValue);
@@ -40,22 +40,22 @@ Node* input_binary_tree() {
 		q.pop();
 
 		int leftValue, rightValue;
-		cout << "Enter a value for the left child of " << parent->value << "(-1 for NULL): ";
+		cout << "Enter a value for the left child of " << parent->value << "(-1 for nullptr): ";
 		cin >> leftValue;
-		cout << "Enter a value for the right child of " << parent->value << "(-1 for NULL): ";
+		cout << "Enter a value for the right child of " << parent->value << "(-1 for nullptr): ";
 		cin >> rightValue;
 
 		Node* leftChild, * rightChild;
 
 		if (leftValue == -1) {
-			leftChild = NULL;
+			leftChild = nullptr;
 		}
 		else {
 			leftChild = new Node(leftValue);
 		}
 
 		if (rightValue == -1) {
-			rightChild = NULL;
+			rightChild = nullptr;
 		}
 		else {
 			rightChild = new Node(rightValue);
@@ -77,13 +77,13 @@ Node* input_binary_tree() {
 }
 
 void insertNumber(Node* &root, int val) {
-	if (root == NULL) {
+	if (root == nullptr) {
 		root = new Node(val);
 		return;
 	}
 
 	if (val < root->value) {
-		if (root->left == NULL) {
+		if (root->left == nullptr) {
 			root->left = new Node(val);
 		}
 		else {
@@ -91,7 +91,7 @@ void insertNumber(Node* &root, int val) {
 		}
 	}
 	else if(val > root->value){
-		if (root->right == NULL) {
+		if (root->right == nullptr) {
 			root->right = new Node(val);
 		}
 		else {
@@ -105,7 +105,7 @@ void insertNumber(Node* &root, int val) {
 }
 
 void levelOrder(Node* root) {
-	if (root == NULL) {
+	if (root == nullptr) {
 		cout << "Tree is empty" << endl;
 		return;
 	}

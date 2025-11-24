@@ -14,20 +14,20 @@ public:
 
 	Node(int value) {
 		this->value = value;
-		this->left = NULL;
-		this->right = NULL;
+		this->left = nullptr;
+		this->right = nullptr;
 	}
 };
 
 Node* input_binary_tree() {
 	int rootValue;
-	cout << "Enter a value for root (-1 for NULL): ";
+	cout << "Enter a value for root (-1 for nullptrptr): ";
 	cin >> rootValue;
 
 	Node* root;
 
 	if (rootValue == -1) {
-		root = NULL;
+		root = nullptr;
 	}
 	else {
 		root = new Node(rootValue);
@@ -42,22 +42,22 @@ Node* input_binary_tree() {
 		q.pop();
 
 		int leftValue, rightValue;
-		cout << "Enter a value for the left child of " << parent->value << "(-1 for NULL): ";
+		cout << "Enter a value for the left child of " << parent->value << "(-1 for nullptr): ";
 		cin >> leftValue;
-		cout << "Enter a value for the right child of " << parent->value << "(-1 for NULL): ";
+		cout << "Enter a value for the right child of " << parent->value << "(-1 for nullptr): ";
 		cin >> rightValue;
 
 		Node* leftChild, * rightChild;
 
 		if (leftValue == -1) {
-			leftChild = NULL;
+			leftChild = nullptr;
 		}
 		else {
 			leftChild = new Node(leftValue);
 		}
 
 		if (rightValue == -1) {
-			rightChild = NULL;
+			rightChild = nullptr;
 		}
 		else {
 			rightChild = new Node(rightValue);
@@ -79,7 +79,7 @@ Node* input_binary_tree() {
 }
 
 void levelOrder(Node* root) {
-	if (root == NULL) {
+	if (root == nullptr) {
 		return;
 	}
 
@@ -103,8 +103,8 @@ void levelOrder(Node* root) {
 }
 
 Node* searchNum(Node* root, int searchNumber) {
-	if (root == NULL) {
-		return NULL;
+	if (root == nullptr) {
+		return nullptr;
 	}
 	if (root->value == searchNumber) {
 		return root;
@@ -130,7 +130,7 @@ int main() {
 
 	Node* subTree = searchNum(root, number);
 	
-	if (subTree != NULL) {
+	if (subTree != nullptr) {
 		cout << "\nFound. Subtree rooted with found node: ";
 		levelOrder(subTree);
 	}
