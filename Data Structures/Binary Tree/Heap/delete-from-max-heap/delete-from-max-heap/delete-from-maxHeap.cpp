@@ -60,11 +60,11 @@ void delete_from_maxHeap(vector<int>& v) {
 			rightValue = INT_MIN; //if right idx does not exist, assign it the smallest number
 		}
 
-		if (leftValue > v[parentIdx] && leftValue > rightValue) {
+		if (leftValue >= v[parentIdx] && leftValue >= rightValue) {
 			swap(v[leftIdx], v[parentIdx]);
 			parentIdx = leftIdx; // left index of this iteration becomes parentIndex for the next interation
 		}
-		else if (rightValue > v[parentIdx] && rightValue > leftValue) {
+		else if (rightValue >= v[parentIdx] && rightValue >= leftValue) {
 			swap(v[rightIdx], v[parentIdx]);
 			parentIdx = rightIdx; // right index of this iteration becomes parentIndex for the next interation
 		}
