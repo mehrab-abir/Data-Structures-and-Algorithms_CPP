@@ -26,6 +26,7 @@ Node* input_binary_tree() {
 
 	if (rootValue == -1) {
 		root = NULL;
+		return;
 	}
 	else {
 		root = new Node(rootValue);
