@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="bst-from-sorted-array/bst-from-sorted-array.vcxproj" Id="1b8b736a-3cd0-4010-95f0-0c3904820b61" />
+  <Project Path="traversal/traversal.vcxproj" />
 </Solution>

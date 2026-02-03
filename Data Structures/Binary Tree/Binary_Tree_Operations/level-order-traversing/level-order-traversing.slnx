@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="level-order-traversing/level-order-traversing.vcxproj" />
+  <Project Path="level-order-traversing/level-order-traversing.vcxproj" Id="213ff2e8-d6f1-4297-8a4d-77e1fa187bac" />
 </Solution>

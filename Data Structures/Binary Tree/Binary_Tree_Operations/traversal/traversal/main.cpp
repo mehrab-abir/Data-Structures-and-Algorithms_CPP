@@ -1,6 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
-#include<algorithm>
 #include<queue>
 
 using namespace std;
@@ -13,8 +12,8 @@ public:
 
 	Node(int value) {
 		this->value = value;
-		this->left = NULL;
-		this->right = NULL;
+		this->left = nullptr;
+		this->right = nullptr;
 	}
 };
 
@@ -27,7 +26,7 @@ Node* input_for_binary_tree() {
 	Node* root;
 
 	if (value == -1) {
-		root = NULL;
+		root = nullptr;
 		cout << "Root is NULL. Tree is empty." << endl;
 		return root;
 	}
@@ -55,14 +54,14 @@ Node* input_for_binary_tree() {
 		Node* leftNode, * rightNode;
 
 		if (leftValue == -1) {
-			leftNode = NULL;
+			leftNode = nullptr;
 		}
 		else {
 			leftNode = new Node(leftValue);
 		}
 
 		if (rightValue == -1) {
-			rightNode = NULL;
+			rightNode = nullptr;
 		}
 		else {
 			rightNode = new Node(rightValue);
@@ -71,10 +70,10 @@ Node* input_for_binary_tree() {
 		parentNode->left = leftNode;
 		parentNode->right = rightNode;
 
-		if (parentNode->left != NULL) {
+		if (parentNode->left != nullptr) {
 			q.push(parentNode->left);
 		}
-		if (parentNode->right != NULL) {
+		if (parentNode->right != nullptr) {
 			q.push(parentNode->right);
 		}
 	}
@@ -83,28 +82,56 @@ Node* input_for_binary_tree() {
 	return root;
 }
 
-int maxHeight(Node* root) {
-	if (root == NULL) {
-		return 0;
+void preorder(Node* root) {
+	if (root == nullptr) {
+		return;
 	}
-	//if (root->left == NULL && root->right == NULL) {
-	//	return 0; //karon leaf node er height zero dhora hoise,  1 hole ai block lagbei na, tobe return a 1 plus korte hobe
-	//}
-	
-	int leftHeight = maxHeight(root->left);
-	int rightHeight = maxHeight(root->right);
-	return max(leftHeight, rightHeight) + 1; //every time, root nije to 1 height a ase, tai 1 jug kora
-	//return korar somoy 1 plus hobe sob somoy, leaf node er height 0 or 1 jetai hok
+
+	cout << root->value << " ";
+	preorder(root->left);
+	preorder(root->right);
 }
+
+void inorder(Node* root) {
+	if (root == nullptr) {
+		return;
+	}
+
+	inorder(root->left);
+	cout << root->value << " ";
+	inorder(root->right);
+}
+
+void postorder(Node* root) {
+	if (root == nullptr) {
+		return;
+	}
+
+	postorder(root->left);
+	postorder(root->right);
+	cout << root->value << " ";
+}
+
 
 int main() {
 
 	Node* root = input_for_binary_tree();
 
-	int maxTreeHeight = maxHeight(root);  //number of connected nodes from the root(including root)
+	cout << "Preorder: ";
+	preorder(root);
 
-	cout << "Height of the binary tree: " << maxTreeHeight << endl;
-	
+	cout << endl << endl;
+
+	cout << "Inorder: ";
+	inorder(root);
+
+	cout << endl << endl;
+
+	cout << "Postorder: ";
+	postorder(root);
+
+	cout << endl << endl;
+
 
 	return 0;
 }
